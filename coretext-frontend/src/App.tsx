@@ -1,9 +1,14 @@
+
 import { useState } from 'react';
 import Navbar from './components/navbar';
 import Footer from './components/footer';
 import ModelSelector from './components/modelselector';
 import Textbox from './components/textbox';
 import Button from './components/button';
+import summarizer from './sections/SummarizerSection';
+import HowToUseSection from './sections/HowToUseSection';
+import HeroSection from './sections/HeroSection';
+import about us from './sections/AboutUsSection';
 // import LanguageSwitch from './components/languangeswitcher';
 
 function App() {
@@ -53,20 +58,6 @@ function App() {
         </div>
 
 
-        {/* Demo Counter
-        <div className="card mt-6">
-          <button
-            onClick={() => setCount((count) => count + 1)}
-            className="px-4 py-2 bg-blue-500 text-white rounded"
-          >
-            {language === 'en' ? 'count is' : 'jumlahnya'} {count}
-          </button>
-          <p className="mt-2 text-gray-600">
-            {language === 'en'
-              ? 'Edit src/App.tsx and save to test HMR'
-              : 'Edit src/App.tsx dan simpan untuk uji perubahan langsung'}
-          </p>
-        </div> */}
       </main>
 
       <Footer />
