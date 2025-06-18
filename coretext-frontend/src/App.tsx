@@ -1,35 +1,77 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import Navbar from './components/navbar';
+import Footer from './components/footer';
+import ModelSelector from './components/modelselector';
+import Textbox from './components/textbox';
+import Button from './components/button';
+// import LanguageSwitch from './components/languangeswitcher';
 
 function App() {
-  const [count, setCount] = useState(0)
+  // const [count, setCount] = useState(0);
+  const [selectedModel, setSelectedModel] = useState('Paragraph');
+  const [inputText, setInputText] = useState('');
+  const [language, setLanguage] = useState('en');
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Navbar
+        selectedLanguage={language}
+        onLanguageChange={setLanguage}
+      />
+      
+      <main className="p-4 text-center min-h-screen bg-gray-50">
+        <h1 className="text-2xl font-bold mt-4 text-gray-800">
+          {language === 'en' ? 'Welcome to CoreText.ai' : 'Selamat Datang di CoreText.ai'}
+        </h1>
+
+        {/* Model Selector */}
+        <div className="mt-6">
+          <ModelSelector
+            selectedModel={selectedModel}
+            onSelectModel={setSelectedModel}
+          />
+          <p className="mt-2 text-sm text-gray-500">
+            You selected: <strong>{selectedModel}</strong>
+          </p>
+        </div>
+
+        {/* Textbox Input */}
+        <div className="mt-6 max-w-2xl mx-auto">
+          <Textbox
+            label={language === 'en' ? 'Enter your text' : 'Masukkan teks kamu'}
+            placeholder={language === 'en' ? 'Type something...' : 'Tulis sesuatu...'}
+            value={inputText}
+            onChange={setInputText}
+          />
+
+          <div className="mt-4 text-center">
+          <Button
+            text={language === 'en' ? 'Summarize' : 'Ringkas'}
+            onClick={() => console.log('Clicked')}
+            />
+          </div>
+        </div>
+
+
+        {/* Demo Counter
+        <div className="card mt-6">
+          <button
+            onClick={() => setCount((count) => count + 1)}
+            className="px-4 py-2 bg-blue-500 text-white rounded"
+          >
+            {language === 'en' ? 'count is' : 'jumlahnya'} {count}
+          </button>
+          <p className="mt-2 text-gray-600">
+            {language === 'en'
+              ? 'Edit src/App.tsx and save to test HMR'
+              : 'Edit src/App.tsx dan simpan untuk uji perubahan langsung'}
+          </p>
+        </div> */}
+      </main>
+
+      <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
