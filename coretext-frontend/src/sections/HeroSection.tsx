@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const HeroSection = () => {
     return (
@@ -12,9 +13,11 @@ const HeroSection = () => {
                 Turn long texts into clear, concise summaries in seconds.
             </p>
             <div className="flex items-center gap-4">
-                <button className="bg-[#4BD2D2] text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-100 transition">
-                    Get Started
-                </button>
+                {/* <link to="/summarize" className='btn'> */}
+                    <button className="bg-[#4BD2D2] text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-100 transition">
+                        Get Started
+                    </button>
+                {/* </link> */}
             </div>
         </section>
     );

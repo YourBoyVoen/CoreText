@@ -49,7 +49,6 @@ const TextSummarizer = () => {
     return (
         <div className="min-h-screen bg-gray-50 p-6">
             <div className="max-w-6xl mx-auto">
-                {/* Model Selection */}
                 <div className="text-center mb-8">
                     <h2 className="text-2xl font-bold text-gray-800 mb-6">Model:</h2>
                     <div className="inline-flex bg-white rounded-full p-2 shadow-lg">
@@ -68,9 +67,7 @@ const TextSummarizer = () => {
                     </div>
                 </div>
 
-                {/* Main Content */}
                 <div className="grid lg:grid-cols-2 gap-6 mb-8">
-                    {/* Input Box */}
                     <div className="bg-white rounded-3xl shadow-lg border border-gray-200 p-8">
                         <textarea
                             value={inputText}
@@ -83,7 +80,6 @@ const TextSummarizer = () => {
                         </div>
                     </div>
 
-                    {/* Output Box */}
                     <div className="bg-white rounded-3xl shadow-lg border border-gray-200 p-8 relative">
                         <div className="h-80 overflow-y-auto">
                             {isProcessing ? (
@@ -114,7 +110,6 @@ const TextSummarizer = () => {
                     </div>
                 </div>
 
-                {/* Summarize Button */}
                 <div className="text-center">
                     <button
                         onClick={generateSummary}

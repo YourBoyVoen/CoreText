@@ -13,11 +13,9 @@ const HowToUseSection = () => {
 
             <div className="max-w-7xl mx-auto space-y-32">
 
-                {/* Step 1 - Image Left, Text Right */}
                 <div className="flex items-center justify-between gap-16">
                     <div className="flex-1">
                         <div className= "bg-white rounded-3xl p-8 shadow-[0_4px_30px_rgba(13,148,136,0.4)] border border-teal-500 relative">
-                            {/* Mock interface for step 1 */}
                             <div className="space-y-6">
                                 <div className="flex space-x-2">
                                     <div className="bg-teal-500 text-white px-4 py-2 rounded-full text-sm font-medium">
@@ -52,7 +50,6 @@ const HowToUseSection = () => {
                     </div>
                 </div>
 
-                {/* Step 2 - Text Left, Image Right */}
                 <div className="flex items-center justify-between gap-16">
                     <div className="flex-1">
                         <div className="space-y-4">
@@ -66,7 +63,6 @@ const HowToUseSection = () => {
                     </div>
                     <div className="flex-1">
                         <div className="bg-white rounded-3xl p-8 shadow-[0_4px_30px_rgba(13,148,136,0.4)] border border-teal-500 relative">
-                            {/* Mock interface for step 2 */}
                             <div className="space-y-4">
                                 <div className="bg-gray-100 rounded-lg p-6 h-48">
                                     <p className="text-gray-500 text-sm">Type your text here...</p>
@@ -79,11 +75,9 @@ const HowToUseSection = () => {
                     </div>
                 </div>
 
-                {/* Step 3 - Image Left, Text Right */}
                 <div className="flex items-center justify-between gap-16">
                     <div className="flex-1">
                         <div className="bg-white rounded-3xl p-8 shadow-[0_4px_30px_rgba(13,148,136,0.4)] border border-teal-500 relative">
-                            {/* Mock interface for step 3 */}
                             <div className="space-y-4">
                                 <div className="bg-gray-100 rounded-lg p-6 h-48">
                                     <p className="text-gray-500 text-sm">Your results will be here...</p>
@@ -111,7 +105,6 @@ const HowToUseSection = () => {
                     </div>
                 </div>
 
-                {/* Step 4 - Text Left, Image Right (Final Step) */}
                 <div className="flex flex-col items-center text-center space-y-8">
                     <div className="space-y-4">
                         <h3 className="text-3xl font-bold text-gray-900">
@@ -125,9 +118,7 @@ const HowToUseSection = () => {
 
             </div>
 
-            {/* Connecting lines/arrows - decorative elements */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                {/* You can add decorative curved lines here if needed */}
             </div>
         </section>
     );

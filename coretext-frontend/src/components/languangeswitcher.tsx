@@ -1,29 +1,55 @@
-import React from 'react';
+import { useState } from "react";
+import { FaChevronDown } from "react-icons/fa";
 
-interface LanguageSwitchProps {
+interface Language {
+  code: string;
+  label: string;
+  flag: string;
+}
+
+const languages: Language[] = [
+  { code: "EN", label: "English", flag: "src/assets/flags/uk.png" },
+  { code: "ID", label: "Indonesia", flag: "src/assets/flags/id.png" },
+];
+
+interface Props {
   selectedLanguage: string;
   onLanguageChange: (lang: string) => void;
 }
 
-const LanguageSwitch: React.FC<LanguageSwitchProps> = ({
-  selectedLanguage,
-  onLanguageChange,
-}) => {
+const LanguageSwitch: React.FC<Props> = ({ selectedLanguage, onLanguageChange }) => {
+  const [open, setOpen] = useState(false);
+
+  const selected = languages.find((lang) => lang.code === selectedLanguage) || languages[0];
+
   return (
-    <div className="flex items-center gap-2">
-      <label htmlFor="language" className="text-sm font-medium text-gray-700">
-        Language:
-      </label>
-      <select
-        id="language"
-        value={selectedLanguage}
-        onChange={(e) => onLanguageChange(e.target.value)}
-        className="border border-gray-300 rounded px-2 py-1 text-sm"
+    <div className="relative">
+      <div
+        className="flex items-center bg-[#4BD2D2] px-3 py-1 rounded-full cursor-pointer shadow-md"
+        onClick={() => setOpen(!open)}
       >
-        <option value="en">English</option>
-        <option value="id">Bahasa Indonesia</option>
-        {/* Tambahkan bahasa lain jika diperlukan */}
-      </select>
+        <img src={selected.flag} alt={selected.code} className="w-8 h-5 rounded-md mr-2 object-cover" />
+        <span className="font-bold text-black mr-1">{selected.code}</span>
+        <FaChevronDown />
+      </div>
+
+      {open && (
+        <div className="absolute right-0 mt-2 w-32 bg-white rounded shadow-lg z-10">
+          {languages.map((lang) => (
+            <div
+              key={lang.code}
+              onClick={() => {
+                onLanguageChange(lang.code);
+                setOpen(false);
+              }}
+              className="flex items-center px-3 py-2 hover:bg-gray-100 cursor-pointer"
+            >
+              <img src={lang.flag} alt={lang.code} className="w-5 h-3 mr-2 rounded-sm object-cover" />
+              <span className="text-sm">{lang.code}</span>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
