@@ -16,7 +16,7 @@ const HowToUseSection = () => {
                 {/* Step 1 - Image Left, Text Right */}
                 <div className="flex items-center justify-between gap-16">
                     <div className="flex-1">
-                        <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100 relative">
+                        <div className= "bg-white rounded-3xl p-8 shadow-[0_4px_30px_rgba(13,148,136,0.4)] border border-teal-500 relative">
                             {/* Mock interface for step 1 */}
                             <div className="space-y-6">
                                 <div className="flex space-x-2">
@@ -46,7 +46,7 @@ const HowToUseSection = () => {
                                 <span className="text-teal-500">1</span> Choose what you want for output
                             </h3>
                             <p className="text-gray-600 text-lg leading-relaxed">
-                                You cant choose 4 options; paragraph, points, short, medium, long.
+                                You can choose 4 options; paragraph, points, short, medium, long.
                             </p>
                         </div>
                     </div>
@@ -65,7 +65,7 @@ const HowToUseSection = () => {
                         </div>
                     </div>
                     <div className="flex-1">
-                        <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100">
+                        <div className="bg-white rounded-3xl p-8 shadow-[0_4px_30px_rgba(13,148,136,0.4)] border border-teal-500 relative">
                             {/* Mock interface for step 2 */}
                             <div className="space-y-4">
                                 <div className="bg-gray-100 rounded-lg p-6 h-48">
@@ -82,7 +82,7 @@ const HowToUseSection = () => {
                 {/* Step 3 - Image Left, Text Right */}
                 <div className="flex items-center justify-between gap-16">
                     <div className="flex-1">
-                        <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100">
+                        <div className="bg-white rounded-3xl p-8 shadow-[0_4px_30px_rgba(13,148,136,0.4)] border border-teal-500 relative">
                             {/* Mock interface for step 3 */}
                             <div className="space-y-4">
                                 <div className="bg-gray-100 rounded-lg p-6 h-48">
